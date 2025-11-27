@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gul Muhammad | Male Nurse & Medical Assistant</title>
+    <meta name="description" content="Gul Muhammad - Compassionate and dedicated male nurse with 9+ years clinical & IT experience. Open to positions in Riyadh, Jeddah, and Dammam.">
+    <meta name="keywords" content="Saudi Arabia Nurse 2025, Medical Assistant Riyadh, Healthcare IT, HSE Officer, Nursing Jobs Saudi Arabia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        :root {
+            --navy: #0f172a;
+            --teal: #0d9488;
+            --gold: #fbbf24;
+            --white: #ffffff;
+            --light-bg: #f8fafc;
+            --gray: #64748b;
+            --dark-gray: #334155;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-mode {
+            --navy: #0f172a;
+            --teal: #14b8a6;
+            --gold: #fbbf24;
+            --white: #f1f5f9;
+            --light-bg: #0f172a;
+            --gray: #94a3b8;
+            --dark-gray: #cbd5e1;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+            --glass: rgba(15, 23, 42, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-bg);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5 {
+            color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--teal);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--teal);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--teal);
+            color: var(--teal);
+        }
+
+        .btn-outline:hover {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--navy) 0%, #1e293b 100%);
+            color: var(--white);
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero .title {
+            font-size: 1.5rem;
+            color: var(--teal);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero .title i {
+            margin-right: 10px;
+        }
+
+        .typing-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            min-height: 30px;
+        }
+
+        .typing-text span {
+            color: var(--gold);
+            border-right: 2px solid var(--gold);
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { border-color: var(--gold); }
+            50% { border-color: transparent; }
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(13, 148, 136, 0.2);
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .availability .dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .dark-mode .stat-card {
+            background: var(--navy);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 10px;
+        }
+
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 5px;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--white);
+        }
+
+        .dark-mode .experience {
+            background: var(--navy);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--teal);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+
+        .timeline-content {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .dark-mode .timeline-content {
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid var(--light-bg);
+        }
+
+        .dark-mode .timeline-content:before {
+            border-left: 10px solid rgba(15, 23, 42, 0.7);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content:before {
+            right: auto;
+            left: -10px;
+            border-left: none;
+            border-right: 10px solid var(--light-bg);
+        }
+
+        .dark-mode .timeline-item:nth-child(even) .timeline-content:before {
+            border-right: 10px solid rgba(15, 23, 42, 0.7);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--teal);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 0;
+            right: -60px;
+            width: 40px;
+            height: 40px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: 0 0 0 5px var(--light-bg);
+        }
+
+        .dark-mode .timeline-icon {
+            box-shadow: 0 0 0 5px var(--navy);
+        }
+
+        .timeline-item:nth-child(even) .timeline-icon {
+            right: auto;
+            left: -60px;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--light-bg);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .dark-mode .skill-category {
+            background: var(--navy);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--teal);
+        }
+
+        .skill-category h3 i {
+            margin-right: 10px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .dark-mode .skill-bar {
+            background: #334155;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--teal);
+            border-radius: 4px;
+            position: relative;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+        }
+
+        .tech-icon i {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 5px;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background: var(--white);
+        }
+
+        .dark-mode .certifications {
+            background: var(--navy);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .cert-card {
+            background: var(--light-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .dark-mode .cert-card {
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .cert-header {
+            background: var(--teal);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cert-body {
+            padding: 20px;
+        }
+
+        .cert-body ul {
+            list-style: none;
+        }
+
+        .cert-body li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .cert-body li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: bold;
+        }
+
+        /* Education Section */
+        .education {
+            background: var(--light-bg);
+        }
+
+        .edu-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .edu-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .edu-item:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: -40px;
+            width: 2px;
+            background: var(--teal);
+        }
+
+        .edu-item:last-child:before {
+            display: none;
+        }
+
+        .edu-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-right: 30px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
+        .edu-content {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            transition: var(--transition);
+        }
+
+        .dark-mode .edu-content {
+            background: var(--navy);
+        }
+
+        .edu-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .edu-date {
+            display: inline-block;
+            background: var(--teal);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .dark-mode .contact {
+            background: var(--navy);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .dark-mode .contact-card {
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .contact-form {
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .dark-mode .form-control {
+            background: #1e293b;
+            border-color: #475569;
+            color: var(--white);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .qrcode-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            gap: 30px;
+        }
+
+        .qrcode-item {
+            text-align: center;
+        }
+
+        .qrcode {
+            width: 150px;
+            height: 150px;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 0 auto 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .dark-mode .qrcode {
+            background: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--teal);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Download CV Button */
+        .download-cv {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--teal);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .download-cv:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .download-cv i {
+            margin-right: 8px;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 50px 0;
+            background: var(--light-bg);
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: var(--navy);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .visitor-counter i {
+            margin-right: 8px;
+            color: var(--gold);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-top: 40px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .timeline:before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 70px;
+            }
+
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+
+            .timeline-content:before {
+                display: none;
+            }
+
+            .timeline-icon {
+                left: 20px;
+                right: auto;
+            }
+
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: 20px;
+            }
+
+            .visitor-counter, .download-cv {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .profile-img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .qrcode-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .whatsapp-float, .download-cv, .visitor-counter, header, footer {
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+            }
+
+            .container {
+                width: 100%;
+                max-width: none;
+            }
+
+            section {
+                padding: 20pt 0;
+                page-break-inside: avoid;
+            }
+
+            .hero {
+                min-height: auto;
+                background: white !important;
+                color: black !important;
+            }
+
+            .hero h1 {
+                color: black !important;
+            }
+
+            .glass-card, .stat-card, .timeline-content, .skill-category, .cert-card, .edu-content, .contact-card {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                background: white !important;
+            }
+
+            .btn {
+                display: none !important;
+            }
+
+            .profile-img {
+                border: 2px solid #ddd !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Gul<span>Muhammad</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="particles-js"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Gul <span>Muhammad</span></h1>
+                <div class="title">
+                    <i class="fas fa-stethoscope"></i>
+                    Male Nurse & Medical Assistant | Riyadh – Jeddah – Dammam | Open to Relocation 🇸🇦
+                </div>
+                <div class="typing-text">
+                    <span id="typing"></span>
+                </div>
+                <p>Compassionate and dedicated male nurse with a strong commitment to providing exceptional patient care. Seeking to leverage clinical skills and extensive knowledge in a dynamic healthcare environment.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="availability">
+                    <span class="dot"></span>
+                    Immediately Available – Valid Saudi transferable Iqama
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="mypic.png" alt="Gul Muhammad" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="glass-card">
+                        <h3>Professional Summary</h3>
+                        <p>Dedicated and highly skilled Nurse Practitioner with extensive experience in diverse medical settings, including surgical and emergency care. Proficient in pain management, advanced life support, and patient education, demonstrating exceptional decision-making and teamwork abilities under pressure.</p>
+                        <p>Strong background in clinical record keeping, infection control, and pre/post-operative care. Holds multiple nursing and technical diplomas, complemented by certifications in advanced cardiac and pediatric support. Committed to enhancing patient outcomes through effective communication and health promotion strategies.</p>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-briefcase-medical"></i>
+                        <h3>5+</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-injured"></i>
+                        <h3>1000+</h3>
+                        <p>Patients Treated</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3>10+</h3>
+                        <p>Certifications</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-language"></i>
+                        <h3>3</h3>
+                        <p>Languages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">August 2024 - Present</span>
+                        <h3>Site Nurse Practitioner</h3>
+                        <h4>Al-Syed Power Plant Project (ASPS), Maidan, KPK, Pakistan</h4>
+                        <ul>
+                            <li>Provide first aid and emergency medical care for injuries or illnesses occurring on the site</li>
+                            <li>Respond quickly and calmly to medical emergencies applying BLS, ACLS & PHTLS as needed</li>
+                            <li>Health awareness on hygiene, first aid, and heat stress prevention</li>
+                            <li>Ensure all first aid kits, medicines, and emergency equipment are fully stocked and serviceable</li>
+                            <li>Maintain accurate medical records, incident reports, and daily treatment logs</li>
+                            <li>Conduct routine health checks and monitor workers wellbeing to prevent illness and injuries</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase-medical"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">January 2024 - July 2024</span>
+                        <h3>Site Nurse Practitioner</h3>
+                        <h4>Rizwan Construction Builders Pvt Ltd, Pakistan</h4>
+                        <ul>
+                            <li>Provide first aid and emergency care to site workers from sudden illnesses or injuries</li>
+                            <li>Conduct daily health check-ups and monitor the well-being of workers</li>
+                            <li>Maintain medical records and treatment logs</li>
+                            <li>Support HSE team in health programs</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">October 2023 - December 2023</span>
+                        <h3>Nurse Practitioner</h3>
+                        <h4>Rohan Construction Builder Association Pvt Ltd, Battagram, KPK, Pakistan</h4>
+                        <ul>
+                            <li>Provide first aid and basic medical care to workers</li>
+                            <li>Monitor workers health and report serious cases to the HSE manager</li>
+                            <li>Keep medical records and clinic supplies updated</li>
+                            <li>Educate workers on hygiene and disease prevention</li>
+                            <li>Assist in emergency response and health check-up programs</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">January 2023 - June 2023</span>
+                        <h3>Surgical Technician</h3>
+                        <h4>Fida General & Surgical Hospital Battagram, Pakistan</h4>
+                        <ul>
+                            <li>Prepare and maintain a sterile surgical area</li>
+                            <li>Follow infection control and safety procedures</li>
+                            <li>Assist surgeons during operations</li>
+                            <li>Provide pre and post-operative patient care</li>
+                            <li>Dispose of medical waste and sharps safely</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">October 2021 - December 2022</span>
+                        <h3>Operation Theater Incharge + Emergency Nurse</h3>
+                        <h4>Haris General & Surgical Hospital, Battagram, Pakistan</h4>
+                        <ul>
+                            <li>Provide emergency care to critical patients</li>
+                            <li>Assist surgeons and anesthetists during surgery</li>
+                            <li>Prepare and manage surgical instruments and equipment</li>
+                            <li>Monitor patient condition before, during, and after surgery</li>
+                            <li>Follow infection control and safety procedures</li>
+                            <li>Work with medical teams to ensure quality patient care</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-heartbeat"></i> Clinical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Pain Management</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Advanced Life Support</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Patient Education</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Infection Control</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Emergency Response</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-medical"></i> IT & Technical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Medical Record Keeping</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Healthcare IT Systems</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Web Development</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Python Programming</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Data Analysis</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65"></div>
+                        </div>
+                    </div>
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                            <span>HMIS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Excel</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-code"></i>
+                            <span>Web Dev</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Soft Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Communication</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Teamwork</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Decision Making</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Leadership</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Problem Solving</span>
+                            <span>87%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Licenses</h2>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <h3>ACLS</h3>
+                        <p>Advanced Cardiac Life Support</p>
+                    </div>
+                    <div class="cert-body">
+                        <p>Completed ACLS certification, mastering advanced cardiovascular life support techniques, including emergency response protocols, airway management, and pharmacological interventions.</p>
+                        <ul>
+                            <li>Emergency response protocols</li>
+                            <li>Airway management</li>
+                            <li>Pharmacological interventions</li>
+                            <li>Team coordination</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <h3>PALS</h3>
+                        <p>Pediatric Advanced Life Support</p>
+                    </div>
+                    <div class="cert-body">
+                        <p>Completed Pediatric Advanced Life Support (PALS) certification, mastering advanced techniques for assessing and managing critically ill infants and children.</p>
+                        <ul>
+                            <li>Pediatric assessment</li>
+                            <li>Airway management</li>
+                            <li>Defibrillation techniques</li>
+                            <li>Team dynamics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <h3>BLS</h3>
+                        <p>Basic Life Support</p>
+                    </div>
+                    <div class="cert-body">
+                        <p>Completed BLS - Basic Life Support certification, mastering critical techniques for cardiopulmonary resuscitation (CPR), using an automated external defibrillator (AED).</p>
+                        <ul>
+                            <li>CPR techniques</li>
+                            <li>AED usage</li>
+                            <li>Rescue breaths</li>
+                            <li>Emergency assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <h3>BBP</h3>
+                        <p>Bloodborne Pathogens Course</p>
+                    </div>
+                    <div class="cert-body">
+                        <p>Completed the Bloodborne Pathogens Course, gaining essential knowledge in recognizing and mitigating risks associated with bloodborne pathogens.</p>
+                        <ul>
+                            <li>Risk recognition</li>
+                            <li>Safe handling procedures</li>
+                            <li>Exposure prevention</li>
+                            <li>PPE usage</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <h3>CPR, AED & First Aid</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Acquired vital skills in CPR, AED use, and First Aid through hands-on training and simulations. Demonstrated ability to assess emergency situations and perform life-saving techniques.</p>
+                        <ul>
+                            <li>Emergency assessment</li>
+                            <li>Life-saving techniques</li>
+                            <li>Initial care provision</li>
+                            <li>Safety enhancement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-header">
+                        <h3>Surgical Diploma</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Completed Surgical Diploma from Faculty of Paramedical Allied Health Sciences Peshawar, Pakistan, gaining comprehensive knowledge in surgical procedures and patient care.</p>
+                        <ul>
+                            <li>Surgical procedures</li>
+                            <li>Sterile techniques</li>
+                            <li>Patient care</li>
+                            <li>Instrument handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="edu-timeline">
+                <div class="edu-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="edu-content">
+                        <span class="edu-date">2024</span>
+                        <h3>Nursing Diploma</h3>
+                        <h4>Khyber Pakhtunkhwa Trade Testing Board Peshawar, KPK, Pakistan</h4>
+                        <p>Comprehensive nursing education with focus on patient care, medical procedures, and healthcare management.</p>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="edu-content">
+                        <span class="edu-date">2023 - 2025</span>
+                        <h3>Diploma in Computer Science (DCS)</h3>
+                        <h4>Modern Institute of Science and Technology Islamabad, Pakistan</h4>
+                        <p>Advanced computer science education covering programming, web development, and IT systems management.</p>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="edu-content">
+                        <span class="edu-date">2022</span>
+                        <h3>Surgical Diploma</h3>
+                        <h4>Faculty of Paramedical Allied Health Sciences Peshawar, Pakistan</h4>
+                        <p>Specialized training in surgical procedures, operating room protocols, and patient care during surgical interventions.</p>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="edu-content">
+                        <span class="edu-date">2019 - 2020</span>
+                        <h3>Diploma in Information Technology (DIT)</h3>
+                        <h4>Board of Trade and Technical Education Islamabad, Pakistan</h4>
+                        <p>Fundamental IT education covering computer systems, software applications, and information management.</p>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="edu-content">
+                        <span class="edu-date">2019</span>
+                        <h3>CSSD Diploma</h3>
+                        <h4>Board of Trade & Technical Education Islamabad, Pakistan</h4>
+                        <p>Central Sterile Services Department training focusing on instrument sterilization and infection control protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Open to Work Anywhere in Saudi Arabia</h2>
+            </div>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+92 347 9572863</p>
+                            <button class="btn copy-btn" data-text="+923479572863">Copy</button>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>gulmuhammadyt@gmail.com</p>
+                            <button class="btn copy-btn" data-text="gulmuhammadyt@gmail.com">Copy</button>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>KPK, Pakistan</p>
+                            <p>Open to relocation in Saudi Arabia</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Website</h3>
+                            <p>https://gulmuhammad-everyone.github.io/Gulmuhammad-CS/</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formspree.io/f/xjvnqjbg" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="qrcode-section">
+                <div class="qrcode-item">
+                    <div class="qrcode" id="websiteQR"></div>
+                    <p>Scan to visit my website</p>
+                </div>
+                <div class="qrcode-item">
+                    <div class="qrcode" id="whatsappQR"></div>
+                    <p>Scan to chat on WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Gul<span>Muhammad</span></div>
+                    <p>Compassionate and dedicated male nurse with a strong commitment to providing exceptional patient care. Seeking to leverage clinical skills and extensive knowledge in a dynamic healthcare environment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Nursing Care</a></li>
+                        <li><a href="#">Emergency Response</a></li>
+                        <li><a href="#">Patient Education</a></li>
+                        <li><a href="#">Health Promotion</a></li>
+                        <li><a href="#">Medical Consultation</a></li>
+                        <li><a href="#">Healthcare IT</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gul Muhammad. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/923479572863?text=Hi%20Gul%20Muhammad,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Download CV Button -->
+    <a href="Mycv.pdf" download class="download-cv">
+        <i class="fas fa-download"></i> Download CV
+    </a>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <i class="fas fa-eye"></i> <span id="visitorCount">0</span> Visitors
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Theme Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.innerHTML = document.body.classList.contains('dark-mode') 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Typing Effect
+        const typingText = document.getElementById('typing');
+        const texts = [
+            "9+ years combined clinical & IT experience",
+            "Male Nurse & Medical Assistant",
+            "Healthcare IT Specialist",
+            "HSE Officer | Document Controller"
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+
+        // Initialize typing effect
+        setTimeout(type, 1000);
+
+        // Animate Skill Bars on Scroll
+        function animateSkills() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                if (isElementInViewport(bar)) {
+                    bar.style.width = width + '%';
+                }
+            });
+        }
+
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        window.addEventListener('scroll', animateSkills);
+        // Initial check on page load
+        animateSkills();
+
+        // Copy to Clipboard
+        const copyButtons = document.querySelectorAll('.copy-btn');
+        
+        copyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const text = button.getAttribute('data-text');
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Here you would typically send the data to a server
+            // For this example, we'll just show a success message
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Visitor Counter (simulated)
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount = parseInt(visitorCount) + 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.getElementById('visitorCount').textContent = visitorCount;
+
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#0d9488" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#0d9488",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Initialize Map
+        function initMap() {
+            // Center on Saudi Arabia
+            const map = L.map('map').setView([23.8859, 45.0792], 5);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            // Add markers for major Saudi cities
+            const cities = [
+                { name: "Riyadh", coords: [24.7136, 46.6753] },
+                { name: "Jeddah", coords: [21.4858, 39.1925] },
+                { name: "Dammam", coords: [26.4207, 50.0888] },
+                { name: "Mecca", coords: [21.3891, 39.8579] },
+                { name: "Medina", coords: [24.5247, 39.5692] }
+            ];
+            
+            cities.forEach(city => {
+                L.marker(city.coords)
+                    .addTo(map)
+                    .bindPopup(`<b>${city.name}</b><br>Open to work here`)
+                    .openPopup();
+            });
+        }
+
+        // Initialize QR Codes
+        function initQRCode() {
+            const websiteQR = document.getElementById('websiteQR');
+            const whatsappQR = document.getElementById('whatsappQR');
+            
+            // Generate QR code for website
+            QRCode.toCanvas(websiteQR, window.location.href, function(error) {
+                if (error) console.error(error);
+            });
+            
+            // Generate QR code for WhatsApp
+            const whatsappUrl = `https://wa.me/923479572863?text=Hi%20Gul%20Muhammad,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.`;
+            QRCode.toCanvas(whatsappQR, whatsappUrl, function(error) {
+                if (error) console.error(error);
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap();
+            initQRCode();
+        });
+    </script>
+</body>
+</html>
